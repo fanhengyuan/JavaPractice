@@ -5,20 +5,37 @@
 
 <hibernate-configuration>
     <session-factory>
-        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="hibernate.connection.characterEncoding">utf8</property>
-        <property name="hibernate.connection.url">jdbc:mysql://192.168.5.110:3306/ssh</property>
-        <property name="hibernate.connection.username">test</property>
-        <property name="hibernate.connection.password"></property>
+        <!--数据源信息 for Druid-->
+        <property name="driverClassName">com.mysql.jdbc.Driver</property>
+        <property name="url">jdbc:mysql://192.168.5.110:3306/ssh?useSSL=false</property>
+        <property name="username">test</property>
+        <property name="password">***</property>
+        <property name="filter">stat,log4j</property>
+        <property name="initialSize">5</property>
+        <property name="maxActive">100</property>
+        <property name="maxWait">60000</property>
+        <property name="timeBetweenEvictionRunsMillis">60000</property>
+        <property name="minEvictableIdleTimeMillis">300000</property>
+        <property name="validationQuery">SELECT 1</property>
+        <property name="testWhileIdle">true</property>
+        <property name="testOnBorrow">false</property>
+        <property name="testOnReturn">false</property>
+        <property name="poolPreparedStatements">false</property>
+        <property name="maxPoolPreparedStatementPerConnectionSize">200</property>
+        <!--end-->
 
-        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="dialect">
+            org.hibernate.dialect.MySQL57Dialect
+        </property>
 
-        <property name="hibernate.show_sql">true</property>
+        <property name="hbm2ddl.auto">update</property>
+        <property name="show_sql">false</property>
+        <property name="format_sql">true</property>
+        <property name="hibernate.connection.provider_class">com.alibaba.druid.support.hibernate.DruidConnectionProvider</property>
 
-        <property name="hibernate.format_sql">true</property>
-
-        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.current_session_context_class">thread</property>
 
         <mapping resource="com/domain/Customer.hbm.xml" />
+
     </session-factory>
 </hibernate-configuration>
