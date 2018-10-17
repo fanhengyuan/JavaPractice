@@ -6,8 +6,19 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.junit.Test;
 
-public class HibernateTest
-{
+public class HibernateTest {
+    private static HibernateTest instance;
+
+    private HibernateTest () {}
+
+    public static synchronized HibernateTest getInstance()
+    {
+        if(instance == null) {
+            instance = new HibernateTest();
+        }
+        return instance;
+    }
+
     @Test
     public void test1(String ip, String name, int level)
     {
