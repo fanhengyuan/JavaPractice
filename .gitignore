@@ -1,0 +1,5 @@
+/.idea
+/out
+/projectFilesBackup
+/target
+/src/main/resources/hibernate.cfg.xml
