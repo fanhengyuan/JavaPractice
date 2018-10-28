@@ -62,7 +62,7 @@ public class DemoServlet extends HttpServlet {
         out.println(time.format(date));
 
         // 测试
-        HibernateTest.getInstance().test1(ip, name, count);
+//        HibernateTest.getInstance().test1(ip, name, count);
 
     }
 

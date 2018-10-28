@@ -14,4 +14,17 @@ public class Customer
     private String level;
     private String phone;
     private String mobile;
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", source='" + source + '\'' +
+                ", industry='" + industry + '\'' +
+                ", level='" + level + '\'' +
+                ", phone='" + phone + '\'' +
+                ", mobile='" + mobile + '\'' +
+                '}';
+    }
 }
