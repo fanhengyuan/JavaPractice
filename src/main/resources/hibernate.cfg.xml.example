@@ -35,6 +35,7 @@
 
         <property name="hibernate.current_session_context_class">thread</property>
 
+        <!--加载映射文件-->
         <mapping resource="com/domain/Customer.hbm.xml" />
 
     </session-factory>
