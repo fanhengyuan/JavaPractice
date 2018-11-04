@@ -88,11 +88,11 @@ public class HibernateTest {
     public void updateOne()
     {
         // 修改
-        Session session = HibernateUtil.openSession();
+        Session session = HibernateUtil.getCurrentSession();
         // 开启事务
         Transaction transaction = session.beginTransaction();
         // 查询
-        Customer customer = session.get(Customer.class, 1L);
+        Customer customer = session.get(Customer.class, 3L);
 
         customer.setName("修改测试 O(∩_∩)O哈哈~");
         session.update(customer);

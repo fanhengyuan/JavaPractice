@@ -33,7 +33,8 @@
         <property name="format_sql">true</property>
         <property name="hibernate.connection.provider_class">com.alibaba.druid.support.hibernate.DruidConnectionProvider</property>
 
-        <property name="hibernate.current_session_context_class">thread</property>
+        <!--创建一个 session 绑定到当前线程-->
+        <property name="current_session_context_class">thread</property>
 
         <!--加载映射文件-->
         <mapping resource="com/domain/Customer.hbm.xml" />
